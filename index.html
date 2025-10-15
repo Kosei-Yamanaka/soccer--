@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>移籍アプリ</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<script src="./src/utils/config.js"></script>
+<script src="./src/utils/data.js"></script>
+<script src="./src/utils/csv.js"></script>
+<script src="./src/utils/app.js"></script>
+
+<body>
+  <div class="wrap">
+    <!-- 左：設定＆DB -->
+    <section class="card">
+      <div class="body">
+        <h2>設定</h2>
+        <div class="row">
+          <div>
+            <label>リーグ</label>
+            <select id="league">
+              <option>Premier League</option>
+              <option>J1 League</option>
+            </select>
+          </div>
+          <div>
+            <label>フォーメーション</label>
+            <select id="formation"></select>
+          </div>
+        </div>
+        <div class="row" style="margin-top:8px">
+          <div>
+            <label>プレースタイル</label>
+            <select id="playstyle"></select>
+          </div>
+          <div>
+            <label>しきい値: <span id="thVal">65</span></label>
+            <input class="slider" type="range" id="threshold" min="40" max="85" value="65" />
+          </div>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <button class="btn" id="loadBtn">データ読込（CSV/JSON）</button>
+          <input type="file" id="file" accept=".csv,.json" style="display:none" />
+          <button class="btn" id="exportBtn">編成を保存</button>
+          <button class="btn danger" id="resetData">データ初期化</button>
+        </div>
+        <p class="muted" style="margin-top:8px">
+          必須列: <code>name, league, positions</code>（positionsは「RW, LW, CF」のカンマ区切りOK）<br/>
+          能力は 0–100: handling, distribution, aerial, defending, stamina, press, passing, speed, dribble, finishing, offball
+        </p>
+      </div>
+
+      <div class="body">
+        <h2>選手データベース <span class="badge" id="poolCount">0人</span></h2>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+          <input id="search" type="text" placeholder="選手名/ポジション検索（例: RSB, CF）" />
+          <button class="btn" id="resetXI">リセットXI</button>
+        </div>
+        <div class="list" id="playerList"></div>
+      </div>
+    </section>
+
+    <!-- 右：ピッチ＆レポート -->
+    <section class="card">
+      <div class="body">
+        <h2>ピッチ</h2>
+        <div class="grid-pitch">
+          <div class="pitch-lines"></div>
+          <div class="pitch-mid"></div>
+          <div class="pitch-box-top"></div>
+          <div class="pitch-box-btm"></div>
+          <div class="cells" id="cells"></div>
+        </div>
+      </div>
+      <div class="body">
+        <h2>適合レポート</h2>
+        <div id="reportHint" class="muted">※ 全ポジションを埋めると、不適合（赤）と代替候補が表示されます。</div>
+        <div id="report" class="report" style="margin-top:8px"></div>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="dlg">
+    <div class="dlg-hd"><strong id="dlgTitle">ポジションに選手を配置</strong></div>
+    <div class="dlg-bd">
+      <div class="two">
+        <div>
+          <label>名前で検索（Enterで確定）</label>
+          <input id="nameInput" type="text" placeholder="フルネーム" />
+        </div>
+        <div class="right" style="align-items:flex-end">
+          <button class="btn" id="pickFromList">リストから選ぶ</button>
+          <button class="btn danger" id="clearSpot">空にする</button>
+        </div>
+      </div>
+      <div class="tbl" style="margin-top:10px">
+        <div id="dlgList"></div>
+      </div>
+      <div class="right" style="margin-top:10px"><button class="btn" id="closeDlg">閉じる</button></div>
+    </div>
+  </dialog>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
