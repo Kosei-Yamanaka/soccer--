@@ -10,12 +10,10 @@
 //GK: GKの総合地
 //GK01: 0→守備的　　1→攻撃的
 
-
-
-
-
 export const SAMPLE_PLAYERS = [
+//PL
 
+//Arsenal
   {
     name: "David Raya", league: "Premier League", positions: ["GK"],
     Offensive: 87,
@@ -29,6 +27,5 @@ export const SAMPLE_PLAYERS = [
     Press: 87, 
     GK: 87, 
     GK01: 87, 
-
   },
 ]
