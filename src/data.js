@@ -1,3 +1,30 @@
+//name: "選手名", 
+// team: "チーム名", 
+// league: "リーグ名", 
+// positions: ["ポジション"], 
+// Offensive: オフェンスセンス, 
+// Dribbling: ドリブル/ボールキープ の平均, 
+// Pass: グラウンダーパス/フライパス の平均, 
+// Finishing: 決定力, 
+// Jampping: フィジカルコンタクト/ジャンプ の平均, 
+// Speed: スピード, 
+// Stamina: スタミナ, 
+// Difensive: ディフェンスセンス/守備意識 の平均, 
+// Press: ボール奪取/アグレッシブネス の平均, 
+// GK: GKの場合は総合値、それ以外は40, 
+// GK01: 守備的ゴールキーパーは0、攻撃的ゴールキーパーは1、キーパーでは無い場合は2,
+
+
+//ポジションは
+// AMF ↔ OMF ＆ ST
+// RW ↔ RWG ＆ RMF
+// LW ↔ LWG ＆LMF
+
+//LWGとかOMFって入力すると反映されないから注意
+
+
+
+
 export const SAMPLE_PLAYERS = [
 
 ///////
