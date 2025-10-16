@@ -1040,4 +1040,62 @@ export const SAMPLE_PLAYERS = [
     GK: 86,
     GK01: 1,
   },
+
+
+
+
+
+
+///////
+///////
+///////
+///////
+//"J1 League"
+///////
+///////
+///////
+///////
+///////
+
+
+
+///////
+///////
+//"Gamba Osaka"
+///////
+///////
+  {
+    name: "Issam Jebali",
+    team: "Gamba Osaka",
+    league: "J1 League",
+    positions: ["CF"],
+    Offensive: 79,
+    Dribbling: 69,
+    Pass: 59,
+    Finishing: 79,
+    Jampping: 76,
+    Speed: 74,
+    Stamina: 73,
+    Difensive: 57,
+    Press: 56,
+    GK: 40,
+    GK01: 2,
+  },
+  {
+    name: "Takashi Usamii",
+    team: "Gamba Osaka",
+    league: "J1 League",
+    positions: ["AMF","CF","CMF"],
+    Offensive: 76,
+    Dribbling: 81,
+    Pass: 69,
+    Finishing: 77,
+    Jampping: 60,
+    Speed: 72,
+    Stamina: 76,
+    Difensive: 54,
+    Press: 54,
+    GK: 40,
+    GK01: 2,
+  },
   ];
