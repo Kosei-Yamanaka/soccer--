@@ -167,7 +167,7 @@ export const SAMPLE_PLAYERS = [
 //ガンバ大阪
   // GK
   {
-    name: "Junichiro Higashiguchi", league: "J1 League", positions: ["GK"],
+    name: "Masaaki Higashiguchi", league: "J1 League", positions: ["GK"],
     handling: 79, distribution: 68, aerial: 78,
     speed: 50, passing: 64, defending: 18, stamina: 61, press: 54, dribble: 28, offball: 38, finishing: 8
   },
